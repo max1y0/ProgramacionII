@@ -1,7 +1,8 @@
 class Fraccion:
-	numerador = None
-	denominador = None
 
-	# def __init__ (self, num, den):
-	# 	self.numerador = num
-	# 	self.denominador = den
+    def __init__ (self, num, den):
+        self.numerador = num
+        self.denominador = den
+
+    def mostrar (self):
+        print (self.numerador , "/" , self.denominador)

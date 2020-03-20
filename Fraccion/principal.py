@@ -1,6 +1,5 @@
 from fraccion import Fraccion
 
-fraccion1 = Fraccion()
+fraccion1 = Fraccion(2,3)
 
-fraccion1.numerador =20
-print (fraccion1.numerador)
+fraccion1.mostrar()
