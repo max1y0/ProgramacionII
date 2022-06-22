@@ -7,7 +7,7 @@ class Fraccion {
 	sumar(fraccion2){
 		let res = new Fraccion(1,1)
 		res.num = this.num * fraccion2.denom + this.denom * fraccion2.num
-		res.denom = this.denom * fraccion2.denom
+		
 		return res
 	}
 
@@ -22,12 +22,14 @@ class Fraccion {
 		let res = new Fraccion(1,1)
 		res.num = this.num * fraccion2.denom
 		res.denom = this.denom * fraccion2.num
+		return res
 	}
 
-	dividir(fraccion2){
+	multiplicar(fraccion2){
 		let res = new Fraccion(1,1)
 		res.num = this.num * fraccion2.num
 		res.denom = this.denom * fraccion2.denom
+		return res
 	}
 }
 
