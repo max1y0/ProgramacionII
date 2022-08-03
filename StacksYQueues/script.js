@@ -1,28 +1,24 @@
 class Pila {
 	constructor (){
-		this.size = 0
-		this.pila = []
+		tam = 0
+		datos = []
 	}
 
-	esVacia () {
-		return this.size == 0
+	esVacia(){
 	}
 
-	tope() {
-		if (!(this.esVacia())) {
-			return this.pila[this.size-1]
+	tope(){
+		if ( pila.esVacia() == false ) {
+			return pila.datos[pila.tam-1]
+		}else{
+			console.log("pila vacia")
 		}
 	}
 
 	apilar(x) {
-		this.pila[this.size] = x
-		this.size++
 	}
 
 	desapilar() {
-		if (!(this.esVacia())) {
-			this.size--
-		}
 	}
 
 	//vaciar()
