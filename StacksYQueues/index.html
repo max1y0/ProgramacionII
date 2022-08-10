@@ -6,27 +6,50 @@
 	<title>Pilas y Colas</title>
 </head>
 <body>
+	<div id="pila">
+		<h3> Pila: </h3>
 
-	<h3> Pila: </h3>
+
+		<input type="number" name="item" id="item">
+		<button id="apilar">apilar</button>
+		
+		<br>
+
+		<button id="desapilar">desapilar</button>
+		<button id="tope">tope</button>
+		<p> tope <span id="topeItem"></span></p>
+
+		<br>
+		
+		<button id="ver">ver</button>
+		NOTA: ver la pila provoca que se vacíe totalmente
+
+		<ul id = "items">
+
+		</ul>
+	</div>
+	<div id="cola">
+		<h3> Cola: </h3>
 
 
-	<input type="number" name="item" id="item">
-	<button id="apilar">apilar</button>
-	
-	<br>
+		<input type="number" name="itemC" id="itemC">
+		<button id="encolar">encolar</button>
+		
+		<br>
 
-	<button id="desapilar">desapilar</button>
-	<button id="tope">tope</button>
-	<p> tope <span id="topeItem"></span></p>
+		<button id="desencolar">desencolar</button>
+		<button id="consultar">consultar</button>
+		<p> Item <span id="primero"></span></p>
 
-	<br>
-	
-	<button id="ver">ver</button>
-	NOTA: ver la pila provoca que se vacíe totalmente
+		<br>
+		
+		<button id="verC">ver</button>
+		NOTA: ver la cola provoca que se vacíe totalmente
 
-	<ul id = "items">
+		<ul id = "itemsC">
 
-	</ul>
+		</ul>
+	</div>
 	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>

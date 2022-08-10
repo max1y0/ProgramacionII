@@ -1,33 +1,31 @@
 class Pila {
 	constructor (){
-		tam = 0
-		datos = []
+		this.size = 0
+		this.datos = []
 	}
 
-	esVacia(){
+	esVacia () {
+		return this.size == 0
 	}
 
-	tope(){
-		if ( pila.esVacia() == false ) {
-			return pila.datos[pila.tam-1]
-		}else{
-			console.log("pila vacia")
+	tope() {
+		if (!(this.esVacia())) {
+			return this.datos[this.size-1]
 		}
 	}
 
 	apilar(x) {
+		this.datos[this.size] = x
+		this.size++
 	}
 
 	desapilar() {
+		if (!(this.esVacia())) {
+			this.size--
+		}
 	}
 
 	//vaciar()
-
-	mostrar() {
-		for (var i = 0; i < this.size; i++) {
-			console.log(this.pila[i])
-		}
-	}
 
 }
 
@@ -65,3 +63,59 @@ function ver(){
 		lista.appendChild(item)
 	}
 }
+
+//COLAS
+
+class Cola{
+	constructor (){
+		this.size = 0
+		this.datos = []
+	}
+
+	esVacia() {
+	}
+
+	encolar(x) {
+	}
+
+	consultar(){
+	}
+
+	desencolar(){
+	}
+}
+
+cola1 = new Cola();
+
+document.getElementById('encolar').addEventListener("click", encolado);
+document.getElementById('desencolar').addEventListener("click", desencolado);
+document.getElementById('consultar').addEventListener("click", verPrimer);
+document.getElementById('verC').addEventListener("click", verC);
+
+function encolado(){
+	const x = document.getElementById("itemC").value
+	document.getElementById("itemC").value = 0
+	cola1.encolar(x)
+}
+
+function desencolado(){
+	cola1.desencolar();
+}
+
+function verPrimer(){
+	const x = cola1.consultar()
+	document.getElementById('primero').innerHTML = x
+}
+
+function verC(){
+	//como hacer para que pila1 no pierda todos los elementos??
+	const lista = document.getElementById("itemsC")
+	lista.innerHTML = ""
+	while ( !cola1.esVacia() ) {
+		const item = document.createElement("li")
+		item.innerText = cola1.consultar()
+		cola1.desencolar()
+		lista.appendChild(item)
+	}
+}
+
