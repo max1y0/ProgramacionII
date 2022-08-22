@@ -130,11 +130,14 @@ function verC(){
 
 document.getElementById('filtrar-pila').addEventListener("click", filtrarP);
 document.getElementById('fusionar-pila-cola').addEventListener("click", fusion);
+document.getElementById('verC-sinBorrar').addEventListener("click", verCSinBorrar);
+document.getElementById('verP-sinBorrar').addEventListener("click", verPSinBorrar);
 
 function filtrarP (){
 //esta funcion deberia pasar todos los elementos pares a una pilaPares
 //y los impares a la pilaImpares
-
+    pilaImpares = new Pila()
+    pilaPares = new Pila()
 
 
 //al final hacemos un console log para testear el funcionamiento correcto
@@ -146,10 +149,25 @@ function fusion(){
 //esta funcion toma los elementos de la cola1 y la pila1, y los guarda en
 //una pila final. Es decir pilaFinal, tiene que tener los elementos de
 //pila1 y cola1 juntos.
+	pilaFinal = new Pila()
 
 
 //al final hacemos un console log para testear el funcionamiento correcto
 	console.log(pilaFinal)
 }
 
+function verCSinBorrar(){
+//esta funcion debe mostrar los elementos de la Cola, y que al final la
+//pila quede como estaba en su estado inicial
 
+//al final hacemos un console log para testear el funcionamiento correcto
+	console.log(cola1)
+}
+
+function verPSinBorrar(){
+//esta funcion debe mostrar los elementos de la Pila, y que al final la
+//pila quede como estaba en su estado inicial
+
+//al final hacemos un console log para testear el funcionamiento correcto
+	console.log(pila1)
+}
