@@ -141,8 +141,8 @@ function filtrarP (){
 
 
 //al final hacemos un console log para testear el funcionamiento correcto
-	console.log(pilaPares)
-	console.log(pilaImpares)
+	console.log("pares:" + JSON.stringify(pilaPares))
+	console.log("impares" + JSON.stringify(pilaImpares))
 }
 
 function fusion(){
@@ -153,7 +153,7 @@ function fusion(){
 
 
 //al final hacemos un console log para testear el funcionamiento correcto
-	console.log(pilaFinal)
+	console.log("pila fusionada: " +JSON.stringify(pilaFinal))
 }
 
 function verCSinBorrar(){
@@ -161,7 +161,7 @@ function verCSinBorrar(){
 //pila quede como estaba en su estado inicial
 
 //al final hacemos un console log para testear el funcionamiento correcto
-	console.log(cola1)
+	console.log("cola: " +JSON.stringify(cola1))
 }
 
 function verPSinBorrar(){
@@ -169,5 +169,5 @@ function verPSinBorrar(){
 //pila quede como estaba en su estado inicial
 
 //al final hacemos un console log para testear el funcionamiento correcto
-	console.log(pila1)
+	console.log("pila: " +JSON.stringify(pila1))
 }
