@@ -29,6 +29,33 @@ class Pila {
 
 }
 
+class Cola{
+	constructor (){
+		this.size = 0
+		this.datos = []
+	}
+
+	esVacia() {
+		return this.size == 0
+	}
+
+	encolar(x) {
+		this.datos[this.size] = x
+		this.size++
+	}
+
+	consultar(){
+		return this.datos[0]
+	}
+
+	desencolar(){
+		for (var i = 0; i < this.size - 1; i++) {
+			this.datos[i] = this.datos[i+1]
+		}
+		this.size--
+	}
+}
+
 let pila1 = new Pila()
 
 
@@ -66,25 +93,6 @@ function ver(){
 
 //COLAS
 
-class Cola{
-	constructor (){
-		this.size = 0
-		this.datos = []
-	}
-
-	esVacia() {
-	}
-
-	encolar(x) {
-	}
-
-	consultar(){
-	}
-
-	desencolar(){
-	}
-}
-
 cola1 = new Cola();
 
 document.getElementById('encolar').addEventListener("click", encolado);
@@ -118,4 +126,30 @@ function verC(){
 		lista.appendChild(item)
 	}
 }
+
+
+document.getElementById('filtrar-pila').addEventListener("click", filtrarP);
+document.getElementById('fusionar-pila-cola').addEventListener("click", fusion);
+
+function filtrarP (){
+//esta funcion deberia pasar todos los elementos pares a una pilaPares
+//y los impares a la pilaImpares
+
+
+
+//al final hacemos un console log para testear el funcionamiento correcto
+	console.log(pilaPares)
+	console.log(pilaImpares)
+}
+
+function fusion(){
+//esta funcion toma los elementos de la cola1 y la pila1, y los guarda en
+//una pila final. Es decir pilaFinal, tiene que tener los elementos de
+//pila1 y cola1 juntos.
+
+
+//al final hacemos un console log para testear el funcionamiento correcto
+	console.log(pilaFinal)
+}
+
 
