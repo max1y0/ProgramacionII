@@ -139,6 +139,15 @@ function filtrarP (){
     pilaImpares = new Pila()
     pilaPares = new Pila()
 
+    while (!pila1.esVacia()){
+	    let x = pila1.tope()
+	    if (x % 2 == 0){
+	    	pilaPares.apilar(x)
+	    } else {
+	    	pilaImpares.apilar(x)
+	    }
+	    pila1.desapilar()
+	}	
 
 //al final hacemos un console log para testear el funcionamiento correcto
 	console.log("pares:" + JSON.stringify(pilaPares))
@@ -151,6 +160,17 @@ function fusion(){
 //pila1 y cola1 juntos.
 	pilaFinal = new Pila()
 
+	while(!pila1.esVacia()){
+		let x = pila1.tope()
+		pilaFinal.apilar(x)
+		pila1.desapilar()
+	}
+	while(!cola1.esVacia()){
+		let x = cola1.consultar()
+		pilaFinal.apilar(x)
+		cola1.desencolar()
+	}
+
 
 //al final hacemos un console log para testear el funcionamiento correcto
 	console.log("pila fusionada: " +JSON.stringify(pilaFinal))
@@ -159,14 +179,40 @@ function fusion(){
 function verCSinBorrar(){
 //esta funcion debe mostrar los elementos de la Cola, y que al final la
 //pila quede como estaba en su estado inicial
+	cola2 = new Cola()
+	while(!cola1.esVacia()){
+		let x = cola1.consultar()
+		console.log(x)
+		cola2.encolar(x)
+		cola1.desencolar()
+	}
+	while(!cola2.esVacia()){
+		let x = cola2.consultar()
+		cola1.encolar(x)
+		cola2.desencolar()
+	}
+
 
 //al final hacemos un console log para testear el funcionamiento correcto
+
 	console.log("cola: " +JSON.stringify(cola1))
 }
 
 function verPSinBorrar(){
 //esta funcion debe mostrar los elementos de la Pila, y que al final la
 //pila quede como estaba en su estado inicial
+	pila2 = new Pila()
+	while(!pila1.esVacia()){
+		let x = pila1.tope()
+		console.log(x)
+		pila2.apilar(x)
+		pila1.desapilar()
+	}
+	while(!pila2.esVacia()){
+		let x = pila2.tope()
+		pila1.apilar(x)
+		pila2.desapilar()
+	}
 
 //al final hacemos un console log para testear el funcionamiento correcto
 	console.log("pila: " +JSON.stringify(pila1))
