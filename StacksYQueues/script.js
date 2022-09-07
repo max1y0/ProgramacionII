@@ -217,3 +217,27 @@ function verPSinBorrar(){
 //al final hacemos un console log para testear el funcionamiento correcto
 	console.log("pila: " +JSON.stringify(pila1))
 }
+
+//codigo para transformar de decimal a binario
+document.getElementById('toBinario').addEventListener("click", toBinario);
+nroBinario = document.getElementById("binario")
+
+function toBinario(){
+	let x = document.getElementById("decimal").value
+	document.getElementById("decimal").value = 0
+	nroBinario.innerHTML = ""
+	pilaBinario = new Pila()
+	
+	//Aca va el codigo para transformar el numero decimal que esta en x
+	//y guarldarlo en la pilaBinario
+
+
+
+	//codigo que muestra la pila en la pagina 
+	while ( !pilaBinario.esVacia() ) {
+		let digito= pilaBinario.tope()
+		console.log(digito)
+		pilaBinario.desapilar()
+		nroBinario.innerHTML +=digito
+	}
+}
