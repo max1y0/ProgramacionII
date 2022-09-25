@@ -231,7 +231,12 @@ function toBinario(){
 	//Aca va el codigo para transformar el numero decimal que esta en x
 	//y guarldarlo en la pilaBinario
 
-
+	while (x >=2) {
+		let resto = x % 2
+		pilaBinario.apilar(resto)
+		x = Math.floor(x/2)
+	}
+	pilaBinario.apilar(x)
 
 	//codigo que muestra la pila en la pagina 
 	while ( !pilaBinario.esVacia() ) {
