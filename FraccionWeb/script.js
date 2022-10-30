@@ -33,9 +33,9 @@ class Fraccion {
 	}
 }
 
-document.getElementById('suma').addEventListener("click", sumar);
+document.getElementById('suma').addEventListener("click", resolverSuma);
 
-function sumar(){
+function ResolverSuma(){
 	let fraccion1 = new Fraccion(document.getElementById("fraccion1Num").value,document.getElementById("fraccion1Denom").value)
 	let fraccion2 = new Fraccion(document.getElementById("fraccion2Num").value,document.getElementById("fraccion2Denom").value)
 	mostrar(fraccion1.sumar(fraccion2))

@@ -1,3 +1,23 @@
+class Pelota{
+  constructor (pX,pY){
+    this.pX = pX
+    this.pY = pY
+    this.color = [255,255,255]
+    this.velX = -2
+    this.velY = 2
+  }
+  
+  show(){
+    ellipse(this.pX,this.pY,50,50)
+  }
+  
+  rebotarPared(){
+    this.velX = -this.velX
+  }
+  rebotarTechoYPiso(){
+    this.velY = -this.velY
+  }
+}
 class Paleta{
   constructor(pX){
     this.pX = pX
@@ -29,6 +49,7 @@ class Paleta{
 
 let paleta1
 let paleta2
+let pelota = new Pelota(200,200)
 function setup() {
   createCanvas(600,400)
   paleta1 = new Paleta(30)
@@ -37,7 +58,8 @@ function setup() {
 
 
 function draw() {
-  background('#212121')
+  background(21,21,21,20)
+  fill(255)
   paleta1.show()
   paleta2.show()
   
@@ -53,5 +75,20 @@ function draw() {
   }
   if (keyIsPressed && key == 'k') {
     paleta2.moverAb()
+  }
+  
+  pelota.show()
+  pelota.pX = pelota.pX + pelota.velX
+  pelota.pY = pelota.pY + pelota.velY
+  
+  //detecto paredes :)
+  if(pelota.pY > paleta1.pY && pelota.pY < paleta1.pY + 90
+     &&
+     pelota.pX < paleta1.pX+30  && pelota.pX > paleta1.pX){
+    pelota.rebotarPared()
+  }
+  //detecto piso y techo
+  if(pelota.pY > height || pelota.pY < 20){
+    pelota.rebotarTechoYPiso()
   }
 }
