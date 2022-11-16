@@ -45,6 +45,7 @@ class Celula {
   }
 
   contarVecinos() {
+    let acum = 0
     //cuenta cuando no esta en ninguna pared
     if (
       !(
@@ -54,7 +55,6 @@ class Celula {
         this.paredInf()
       )
     ) {
-      let acum = 0;
       for (let i = -1; i <= 1; i++) {
         for (let j = -1; j <= 1; j++) {
           if (!(i == 0 && j == 0)) {
@@ -67,30 +67,71 @@ class Celula {
     //contar para cuando esta en las esquinas
     else if (this.paredSup() && this.paredDer()) {
       //esquina superior derecha
-      this.vecinos =
+      this.vecinos +=
+        celulas[this.x - 1][this.y].viva +
+        celulas[this.x - 1][this.y + 1].viva +
+        celulas[this.x][this.y + 1].viva;
     } else if (this.paredSup() && this.paredIzq()) {
       //esquina superior izquierda
-      this.vecinos =
+      this.vecinos +=
+        celulas[this.x + 1][this.y].viva +
+        celulas[this.x + 1][this.y + 1].viva +
+        celulas[this.x][this.y + 1].viva;
     } else if (this.paredInf() && this.paredIzq()) {
       //esquina inf izquierda
-      this.vecinos =
+      this.vecinos +=
+        celulas[this.x + 1][this.y].viva +
+        celulas[this.x + 1][this.y - 1].viva +
+        celulas[this.x][this.y - 1].viva;
     } else if (this.paredInf() && this.paredDer()) {
       //esquina inf der
-      this.vecinos =
+      this.vecinos +=
+        celulas[this.x - 1][this.y].viva +
+        celulas[this.x - 1][this.y - 1].viva +
+        celulas[this.x][this.y - 1].viva;
     } else if (this.paredSup()) {
       //pared superior
-        this.vecinos =
+      for (let i = -1; i <= 1; i++) {
+        for (let j = 0; j <= 1; j++) {
+          this.vecinos += celulas[this.x + i][this.y + j].viva;
+        }
+      }
+      if (this.viva == 1) {
+        this.vecinos -= 1;
+      }
     } else if (this.paredIzq()) {
       //pared izquierda
-        this.vecinos =
+      for (let i = 0; i <= 1; i++) {
+        for (let j = -1; j <= 1; j++) {
+          this.vecinos += celulas[this.x + i][this.y + j].viva;
+        }
+      }
+      if (this.viva == 1) {
+        this.vecinos -= 1;
+      }
     } else if (this.paredInf()) {
       //pared inferior
-      this.vecinos =
+      for (let i = -1; i <= 1; i++) {
+        for (let j = -1; j <= 0; j++) {
+          this.vecinos += celulas[this.x + i][this.y + j].viva;
+        }
+      }
+      if (this.viva == 1) {
+        this.vecinos -= 1;
+      }
     } else if (this.paredDer()) {
       //pared superior
-      this.vecinos =
+      for (let i = -1; i <= 0; i++) {
+        for (let j = -1; j <= 1; j++) {
+          this.vecinos += celulas[this.x + i][this.y + j].viva;
+        }
+      }
+      if (this.viva == 1) {
+        this.vecinos -= 1;
+      }
     }
   }
+}
 
 let celulas;
 let columnas;
