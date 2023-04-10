@@ -1,3 +1,6 @@
+//Codigo editable en
+//https://editor.p5js.org/max1y0/sketches/Zgc8L1bgM
+
 paleta ={
   x: 200,
   y: 400,
