@@ -1,4 +1,4 @@
-class paleta {
+class Paleta {
   
     constructor(x,y) {
     this.x = x
