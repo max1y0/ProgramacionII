@@ -1,7 +1,6 @@
 
 import random
 
-
 class mastermind:
     def __init__(self):
         self.fichas = []

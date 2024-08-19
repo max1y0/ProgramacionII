@@ -32,8 +32,14 @@ def cursor():
         time.sleep(1)
         panchos += carritos * 1
 
+@app.route('/get_puntos')
+def get_puntos():
+    global panchos
+    return jsonify({'panchos': panchos})
+
 if __name__ == '__main__':
     auto_clicker_thread = threading.Thread(target=cursor)
     auto_clicker_thread.daemon = True
     auto_clicker_thread.start()
     app.run(debug=True)
+

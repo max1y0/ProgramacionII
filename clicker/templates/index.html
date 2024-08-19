@@ -1,10 +1,30 @@
-<p> Cantidad: {{panchos}} </p>
-<p> carritos: {{carritos}} </p>
+<html>
 
-<a href="{{ url_for('click_pancho') }}">
-    <button>panchito</button>
-</a>
+<body>
 
-<a href="{{ url_for('comprar_carrito')}}">
-    <button>carrito</button>
-</a>
+
+    <p id="panchos"> Cantidad: {{panchos}} </p>
+    <p> carritos: {{carritos}} </p>
+
+    <a href="{{ url_for('click_pancho') }}">
+        <button>panchito</button>
+    </a>
+
+    <a href="{{ url_for('comprar_carrito')}}">
+        <button>carrito</button>
+    </a>
+
+    <script>
+        function actualizarPuntos() {
+            fetch('/get_puntos')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('panchos').innerText = data.panchos;
+                });
+        }
+
+        setInterval(actualizarPuntos, 1000); // Actualizar cada segundo
+    </script>
+</body>
+
+</html>
