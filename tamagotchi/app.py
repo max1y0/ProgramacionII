@@ -3,7 +3,7 @@ from tamagotchi import *
 
 app = Flask(__name__)
 
-bicho = Tamagotchi(30)
+bicho = Tamagotchi(30,30,30)
 
 
 @app.route('/')

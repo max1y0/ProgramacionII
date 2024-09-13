@@ -1,9 +1,9 @@
 class Tamagotchi:
-  def __init__(self,hambre):
+  def __init__(self,hambre,salud,higiene):
     self.hambre =0
     self.salud =0
     self.higiene =0
-  
+
   def alimentar(self):
     self.hambre +=20
     print(self.hambre)
